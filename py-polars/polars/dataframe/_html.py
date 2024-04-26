@@ -115,7 +115,7 @@ class HTMLFormatter:
                     columns = self.df.columns
                     for c in self.col_idx:
                         _dict = self.attribute_nested_dict[c]
-                        with Tag(self.elements, "th", **_dict):
+                        with Tag(self.elements, "th", _dict):
                             if c == -1:
                                 self.elements.append("&hellip;")
                             else:
@@ -127,7 +127,7 @@ class HTMLFormatter:
                     dtypes = self.df._df.dtype_strings()
                     for c in self.col_idx:
                         _dict = self.attribute_nested_dict[c]
-                        with Tag(self.elements, "td", **_dict):
+                        with Tag(self.elements, "td", _dict):
                             if c == -1:
                                 self.elements.append("&hellip;")
                             else:
@@ -141,7 +141,7 @@ class HTMLFormatter:
                 with Tag(self.elements, "tr"):
                     for c in self.col_idx:
                         _dict = self.attribute_nested_dict[c]
-                        with Tag(self.elements, "td", **_dict):
+                        with Tag(self.elements, "td", _dict):
                             if r == -1 or c == -1:
                                 self.elements.append("&hellip;")
                             else:
