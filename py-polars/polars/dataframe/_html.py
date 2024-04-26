@@ -104,7 +104,7 @@ class HTMLFormatter:
         self.overall_align_lower = overall_alignment.lower()
         self.numeric_align_lower = numeric_alignment.lower()
         self.attribute_nested_dict = {
-            col_idx: self.get_attributes(col_idx=col_idx) for col_idx in self.col_idx
+            c: self.get_attributes(col_idx=c) for c in self.col_idx
         }
 
     def write_header(self) -> None:
