@@ -150,7 +150,7 @@ class HTMLFormatter:
                                     html.escape(series._s.get_fmt(r, str_lengths))
                                 )
 
-    def get_attributes(self, col_idx: int) -> dict[str, str]:
+    def get_attributes(self, col_idx: int) -> dict[str, str] | None:
         """
         Get HTML td/th attributes of a column.
 
@@ -163,7 +163,7 @@ class HTMLFormatter:
             series = self.df[:, col_idx]
             if series.dtype.is_numeric():
                 return {"align": self.numeric_align_lower}
-        return {}
+        return None
 
     def write(self, inner: str) -> None:
         """Append a raw string to the inner HTML."""
