@@ -212,8 +212,8 @@ class NotebookFormatter(HTMLFormatter):
             }}
             </style>
         """
-        style_formatted = dedent(style.format(self.overall_align_lower)).strip()
-        self.write(style_formatted)
+        style_string = dedent(style.format(self.overall_align_lower)).strip()
+        self.write(style_string)
 
     def render(self) -> list[str]:
         """Return the lines needed to render a HTML table."""
