@@ -79,6 +79,9 @@ class HTMLFormatter:
         self.from_series = from_series
         self.row_idx: Iterable[int]
         self.col_idx: Iterable[int]
+        self.overall_align_lower: str
+        self.numeric_align_lower: str
+        self.attribute_nested_dict: dict[str, str]
 
         if max_rows < df.height:
             half, rest = divmod(max_rows, 2)
